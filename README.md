@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+>在线地址 https://ckang1229.wang/aaa/tally-vue/#/Day
+
 ## Build Setup
 
 ``` bash
