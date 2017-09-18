@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+>在线地址 <a href="https://ckang1229.wang/aaa/tally-vue/#/Day" target="_blank">https://ckang1229.wang/aaa/tally-vue/#/Day</a>
+
 ## Build Setup
 
 ``` bash
