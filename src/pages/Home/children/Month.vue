@@ -86,7 +86,7 @@
           this.refreshList(DateObj);
         }
       },
-      refreshList(DateObj){
+      async refreshList(DateObj){
         let [date] = formatTime(DateObj).split(' ');
         let [yearStr, monthStr] = date.split('-')
 
@@ -96,17 +96,14 @@
         this.recordNum = 0;
         this.hasNextPage = false;
 
-        this.getMonthRecord({
-          params:{
-            openId: 'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
-            date: `${yearStr}-${monthStr}`,
-            pageIdx: pageIdx
-          },
-          success:(data)=>{
-            this.formatList(data)
-            this.upDataComplete('monthRecord')
-          }
+        let result = await this.getMonthRecord({
+          openId: 'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
+          date: `${yearStr}-${monthStr}`,
+          pageIdx: pageIdx
         })
+
+        this.formatList(result)
+        this.upDataComplete('monthRecord')
       },
       formatList(data){
         let newList = pageIdx == 1 ? {} : this.list;

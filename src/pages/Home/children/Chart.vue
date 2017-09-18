@@ -92,30 +92,27 @@
           this.refreshList(DateObj);
         }
       },
-      refreshList(DateObj){
+      async refreshList(DateObj){
         let that = this;
         let [date] = formatTime(DateObj).split(' ');
         let [yearStr, monthStr] = date.split('-')
 
         this.dateStr = `${yearStr}-${monthStr}`
 
-        this.getStatistics({
-          params:{
-            openId:'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
-            date: `${yearStr}-${monthStr}`
-          },
-          success:(data)=>{
-            if(data.content.length > 0){
-              that.renderChart(data.content, data.total);
-              that.details = data.content,
-                that.monthTotal = parseFloat(data.total).toFixed(2)
-            }else{
-              that.renderChart([{sortName: '本月暂无记录', payType:2, total: 1}], 1);
-              that.details = []
-            }
-            this.upDataComplete('chart')
-          }
+        let result = await this.getStatistics({
+          openId:'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
+          date: `${yearStr}-${monthStr}`
         })
+
+        if(result.content.length > 0){
+          that.renderChart(result.content, result.total);
+          that.details = result.content,
+            that.monthTotal = parseFloat(result.total).toFixed(2)
+        }else{
+          that.renderChart([{sortName: '本月暂无记录', payType:2, total: 1}], 1);
+          that.details = []
+        }
+        this.upDataComplete('chart')
       },
       renderChart: function(data, total){
         var chartData = [];
@@ -160,8 +157,7 @@
   .Chat .month{
     position: fixed;
     top:1.2rem;
-    left: 0;
-    right: 0;
+    width: 10rem;
     height: 1.2rem;
     text-align: center;
     background-color: #d1b48c;
@@ -212,9 +208,9 @@
   }
   .pie-item{
     position: absolute;
-    width: 200px;
-    height: 200px;
-    clip: rect(0px 200px 200px 100px);
+    width: 5.3333rem;
+    height: 5.3333rem;
+    clip: rect(0px 5.3333rem 5.3333rem 2.666rem);
     left: 0;
     top: 0;
   }
@@ -224,11 +220,11 @@
   }
   .pie{
     position: absolute;
-    width: 200px;
-    height: 200px;
-    clip: rect(0px 100px 200px 0px);
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
+    width: 5.3333rem;
+    height: 5.3333rem;
+    clip: rect(0px 2.666rem 5.3333rem 0px);
+    -webkit-border-radius: 2.666rem;
+    border-radius: 2.666rem;
   }
   .legend-item{
     display: inline-block;

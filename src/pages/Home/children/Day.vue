@@ -42,21 +42,18 @@
       }
     },
     methods:{
-      refreshList(){
+      async refreshList(){
         let [date] = formatTime(new Date).split(' ');
 
-        this.getPayRecord({
-          params: {
-            openId: 'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
-            date: date
-          },
-          success:(data)=>{
-            this.list = data.content;
-            this.total = parseFloat(data.total).toFixed(2);
-
-            this.upDataComplete('dayRecord')
-          }
+        let result = await this.getPayRecord({
+          openId: 'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
+          date: date
         })
+
+        this.list = result.content;
+        this.total = parseFloat(result.total).toFixed(2);
+
+        this.upDataComplete('dayRecord')
       },
       ...mapActions(['getPayRecord']),
       ...mapMutations(['upDataComplete', 'AddRecordStatus'])

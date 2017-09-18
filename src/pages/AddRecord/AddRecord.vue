@@ -107,7 +107,7 @@
       goSort(){
         this.$router.push({name: 'Sort', params: {'sortId': this.sortId}})
       },
-      commitRecord(){
+      async commitRecord(){
         if(typeof this.monetary != 'number'){
           alert('请输入金额')
           return
@@ -119,20 +119,17 @@
           return
         }
 
-        this.commitPayRecord({
-          params:{
-            openId: 'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
-            payTime: [this.dateStr, this.timeStr].join(' '),
-            note: this.note,
-            payType: this.sortId,
-            monetary: this.monetary
-          },
-          success:()=>{
-            this.needUpData();
-
-            this.$router.go(-1)
-          }
+        await this.commitPayRecord({
+          openId: 'o8i8B0c0TFTTJMSbkuF4tmo_4NZI',
+          payTime: [this.dateStr, this.timeStr].join(' '),
+          note: this.note,
+          payType: this.sortId,
+          monetary: this.monetary
         })
+
+        this.needUpData();
+
+        this.$router.go(-1)
       },
       ...mapActions(['commitPayRecord']),
       ...mapMutations(['AddRecordStatus', 'needUpData'])
