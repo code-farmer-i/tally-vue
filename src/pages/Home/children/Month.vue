@@ -48,7 +48,7 @@
 <script type="text/ecmascript-6">
   import {formatTime} from '../../../util/util'
   import {mapActions, mapState, mapMutations} from 'vuex'
-  import {imgArr} from '../../../assets/js/img'
+  import imgArr from '../../../assets/js/img'
   import loadMore from '../../../components/common/loadMore'
   import {windowScroll} from '../../../mixin/mixin'
   import API from '../../../util/api/api'
@@ -214,46 +214,6 @@
     font-size: 0.4rem;
     color: #c5c4c5;
     text-align: left;
-  }
-  .pay-type{
-    margin-left: 0.2666rem;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0.4533rem;
-    color: #333;
-  }
-  .pay-money{
-    display: inline-block;
-    width: 50%;
-    vertical-align: middle;
-  }
-  .gray{
-    color: #8a8a8a;
-    font-size:0.32rem;
-  }
-  .num{
-    margin-top: 0.08rem;
-    color: #14ba89;
-    font-size: 0.48rem;
-    font-family: "ktsz";
-    line-height: 1;
-  }
-  .img-wrap{
-    display: inline-block;
-    position: relative;
-    width: 0.9333rem;
-    height: 0.9333rem;
-    border-radius: 50%;
-    vertical-align: middle;
-  }
-  .img-wrap img{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    margin-left: -0.2666rem;
-    margin-top: -0.2666rem;
-    width: 0.5333rem;
-    height: 0.5333rem;
   }
   .item.active{
     transform: translateX(1.8666rem)

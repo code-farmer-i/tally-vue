@@ -31,7 +31,7 @@
 <script type="text/ecmascript-6">
   import {mapActions, mapState, mapMutations} from 'vuex'
   import {formatTime} from '../../../util/util'
-  import {imgArr} from '../../../assets/js/img'
+  import imgArr from '../../../assets/js/img'
 
   export default{
     data(){
@@ -64,7 +64,7 @@
     computed:{
       ...mapState({
         dayRecord: state => state.needUpdata.dayRecord,
-        initAddRecord: state => state.initAddRecord,
+        'initAddRecord': 'initAddRecord'
       })
     },
     activated(){
@@ -76,9 +76,6 @@
       if(!this.initAddRecord){
         this.AddRecordStatus()
       }
-    },
-    deactivated(){
-      this.isCreated = false;
     }
   }
 </script>
@@ -105,18 +102,6 @@
     font-size: 0.4rem;
     color: #c5c4c5;
     text-align: left;
-  }
-  .pay-type{
-    margin-left: 0.2666rem;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0.4533rem;
-    color: #333;
-  }
-  .pay-money{
-    display: inline-block;
-    width: 50%;
-    vertical-align: middle;
   }
   .gray{
     color: #8a8a8a;

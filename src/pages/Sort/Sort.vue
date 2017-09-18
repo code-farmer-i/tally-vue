@@ -13,7 +13,7 @@
 
 <script type="text/ecmascript-6">
   import headerTop from '../../components/Head'
-  import {imgArr} from '../../assets/js/img'
+  import imgArr from '../../assets/js/img'
   import Bus from '../../util/bus'
 
   export default{

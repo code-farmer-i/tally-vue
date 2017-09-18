@@ -4,7 +4,7 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <tar-bar :set-top="setTop"></tar-bar>
+    <tab-bar :set-top="setTop"></tab-bar>
     <toast></toast>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script type="text/ecmascript-6">
   import {mapActions, mapMutations} from 'vuex';
   import headerTop from '../../components/Head'
-  import tarBar from '../../components/Tarbar'
+  import tabBar from '../../components/Tabbar'
 
   export default {
     name: 'hello',
@@ -35,7 +35,7 @@
     },
     components:{
       headerTop,
-      tarBar
+      tabBar
     },
     methods:{
       ...mapActions(['showLoading', 'hideLoading', 'showToast']),
@@ -97,5 +97,46 @@
   text-align: center;
   font-size: 0.4533rem;
   color: #8a8a8a;
+}
+.num{
+  margin-top: 0.08rem;
+  color: #14ba89;
+  font-size: 0.48rem;
+  font-family: "ktsz";
+  line-height: 1;
+}
+.img-wrap{
+  display: inline-block;
+  position: relative;
+  width: 0.9333rem;
+  height: 0.9333rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.img-wrap img{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-left: -0.2666rem;
+  margin-top: -0.2666rem;
+  width: 0.5333rem;
+  height: 0.5333rem;
+}
+.gray{
+  color: #8a8a8a;
+  font-size:0.32rem;
+}
+.pay-type{
+  margin-left: 0.2666rem;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.4533rem;
+  color: #333;
+}
+.pay-money{
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+  text-align: right;
 }
 </style>

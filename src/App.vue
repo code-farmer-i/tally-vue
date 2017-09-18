@@ -20,9 +20,6 @@ export default {
   created(){
     this.minHeight = window.innerHeight;
   },
-  methods:{
-
-  },
   watch:{
     '$route': function(to, from){
       const toDepth = to.path.split('/').length
@@ -102,7 +99,7 @@ export default {
   }
   @font-face {
     font-family: "ktsz";
-    src: url("../static/font/comic_sans_ms.ttf");
+    src: url("./assets/font/comic_sans_ms.ttf");
   }
   /* 分类图标样式 */
   .sort1, .sort4, .sort8, .sort11{

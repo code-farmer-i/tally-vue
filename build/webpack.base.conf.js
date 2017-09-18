@@ -2,7 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-var urlLoaderPath = process.env.NODE_ENV === 'production' ? '../' : 'static/'
+var urlPublicPath = process.env.NODE_ENV === 'production' ? '/aaa/tally-vue/' : '../../'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -43,7 +43,9 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: urlLoaderPath + 'img/[name].[ext]'
+          name: '[name].[hash:7].[ext]',
+          outputPath: 'static/img/',
+          publicPath: urlPublicPath
         }
       },
       {
@@ -51,7 +53,9 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('media/[name].[hash:7].[ext]')
+          name: '[name].[hash:7].[ext]',
+          outputPath: 'static/media/',
+          publicPath: urlPublicPath
         }
       },
       {
@@ -59,7 +63,9 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: urlLoaderPath + 'font/[name].[ext]'
+          name: '[name].[hash:7].[ext]',
+          outputPath: 'static/font/',
+          publicPath: urlPublicPath
         }
       }
     ]

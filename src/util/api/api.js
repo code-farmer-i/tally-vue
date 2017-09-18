@@ -10,5 +10,6 @@ function setApi(url){
 export default{
   getPayRecord: setApi('aaa/getPayRecord'),
   getMonthRecord: setApi('aaa/getMonthRecord'),
-  commitPayRecord: setApi('aaa/commitPayRecord')
+  commitPayRecord: setApi('aaa/commitPayRecord'),
+  getStatistics: setApi('aaa/getStatistics'),
 }

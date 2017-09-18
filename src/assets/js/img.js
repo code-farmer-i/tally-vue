@@ -17,7 +17,7 @@ import sort13 from '../../../static/img/sort13.png'
 import sort14 from '../../../static/img/sort14.png'
 import sort15 from '../../../static/img/sort15.png'
 
-export const imgArr = {sort1, sort2, sort3, sort4, sort5, sort6, sort7, sort8, sort9, sort10, sort11, sort12, sort13, sort14, sort15};
+export default {sort1, sort2, sort3, sort4, sort5, sort6, sort7, sort8, sort9, sort10, sort11, sort12, sort13, sort14, sort15};
 
 
 
