@@ -1,0 +1,5 @@
+$rootFontSize: 37.5px;
+
+@function sass-pxTorem($px){
+  @return ($px / $rootFontSize) * 1rem
+}

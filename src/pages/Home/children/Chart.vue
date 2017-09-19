@@ -1,5 +1,5 @@
 <template>
-  <div class="Chat">
+  <div class="Chart">
     <div class="month">
       <div class="month-picker" @click="openPicker">{{dateStr}}<img src="../../../assets/img/xiala.png" class="xiala"/></div>
     </div>
@@ -153,119 +153,114 @@
   }
 </script>
 
-<style>
-  .Chat .month{
-    position: fixed;
-    top:1.2rem;
-    width: 10rem;
-    height: 1.2rem;
-    text-align: center;
-    background-color: #d1b48c;
-    z-index: 110;
-    font-size: 0.64rem;
-    line-height: 1.2rem;
-    text-align: center;
-    color: #fff;
-  }
-  .chart-container{
-    padding-top: 2.4rem;
-  }
-  .Chat .month-picker{
-    position: relative;
-    display: inline-block;
-    padding-right: .6rem;
-  }
-  .xiala{
-    position: absolute;
-    top:50%;
-    right: 0;
-    margin-top: -0.266rem;
-    width: 0.5333rem;
-    height: 0.5333rem;
-    vertical-align: middle;
-  }
-  .Chat .sort-wrap{
-    margin: 0.2666rem 0.2666rem 0.5333rem;
-    border: 1px solid #e6e6e6;
-    border-radius: 0.1333rem;
-  }
-  .Chat .sort-item{
-    padding: 0.2666rem 0.2666rem;
-    border-bottom:1px solid #e6e6e6;
-    font-size:0;
-  }
-  .Chat .sort-item:last-child{
-    border-bottom: none;
-  }
-  .pie-wrap{
-    position: relative;
-    margin: 0.4rem auto;
-    width: 5.333rem;
-    height: 5.333rem;
-  }
-  .pie-item.gt50{
-    clip: rect(auto auto auto auto);
-  }
-  .pie-item{
-    position: absolute;
-    width: 5.3333rem;
-    height: 5.3333rem;
-    clip: rect(0px 5.3333rem 5.3333rem 2.666rem);
-    left: 0;
-    top: 0;
-  }
-  .pie.fill {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-  .pie{
-    position: absolute;
-    width: 5.3333rem;
-    height: 5.3333rem;
-    clip: rect(0px 2.666rem 5.3333rem 0px);
-    -webkit-border-radius: 2.666rem;
-    border-radius: 2.666rem;
-  }
-  .legend-item{
-    display: inline-block;
-    margin-right: 0.2666rem;
-    margin-bottom: 0.2666rem;
-    font-size: 0.4rem;
-    line-height: 1;
-  }
-  .legend-wrap{
-    padding-top: 0.4rem;
-    text-align: center;
-  }
-  .legend-color{
-    display: inline-block;
-    margin-right: 0.1333rem;
-    width: 0.2666rem;
-    height: 0.2666rem;
-    border-radius: 0.0533rem;
-  }
-  .Chat .group{
-    margin: 0.4rem auto 0;
-    width: 9.3333rem;
-    border-radius: 0.1333rem;
-  }
-  .Chat .group-title{
-    padding: 0.2666rem;
-    font-size: 0.4rem;
-    font-weight: bold;
-    color: #000;
-  }
-  .Chat .group-title::before{
-    margin-right: 0.1333rem;
-    content: "";
-    height: 100%;
-    border-right:0.1333rem solid #d1b48c;
-  }
-  /*重置picker样式*/
-  .Chat .picker-slot.picker-slot-center:nth-child(1){
-    display: none;
-  }
-  .Chat .picker-slot.picker-slot-center:nth-child(3){
-    display: none;
+<style lang="scss">
+  @import "../../../assets/scss/colors.scss";
+
+  .Chart{
+    .month{
+      position: fixed;
+      top:1.2rem;
+      width: 10rem;
+      height: 1.2rem;
+      text-align: center;
+      background-color: $Theme-color;
+      z-index: 110;
+      font-size: 0.64rem;
+      line-height: 1.2rem;
+      text-align: center;
+      color: #fff;
+    }
+    .chart-container{
+      padding-top: 2.4rem;
+    }
+    .month-picker{
+      position: relative;
+      display: inline-block;
+      padding-right: .6rem;
+    }
+    .sort-wrap{
+      margin: 0.2666rem 0.2666rem 0.5333rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 0.1333rem;
+    }
+    .sort-item{
+      padding: 0.2666rem 0.2666rem;
+      border-bottom:1px solid #e6e6e6;
+      font-size:0;
+    }
+    .sort-item:last-child{
+      border-bottom: none;
+    }
+    .pie-wrap{
+      position: relative;
+      margin: 0.4rem auto;
+      width: 5.333rem;
+      height: 5.333rem;
+    }
+    .pie-item.gt50{
+      clip: rect(auto auto auto auto);
+    }
+    .pie-item{
+      position: absolute;
+      width: 5.3333rem;
+      height: 5.3333rem;
+      clip: rect(0px 5.3333rem 5.3333rem 2.666rem);
+      left: 0;
+      top: 0;
+    }
+    .pie.fill {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    .pie{
+      position: absolute;
+      width: 5.3333rem;
+      height: 5.3333rem;
+      clip: rect(0px 2.666rem 5.3333rem 0px);
+      -webkit-border-radius: 2.666rem;
+      border-radius: 2.666rem;
+    }
+    .legend-item{
+      display: inline-block;
+      margin-right: 0.2666rem;
+      margin-bottom: 0.2666rem;
+      font-size: 0.4rem;
+      line-height: 1;
+    }
+    .legend-wrap{
+      padding-top: 0.4rem;
+      text-align: center;
+    }
+    .legend-color{
+      display: inline-block;
+      margin-right: 0.1333rem;
+      width: 0.2666rem;
+      height: 0.2666rem;
+      border-radius: 0.0533rem;
+    }
+    .group{
+      margin: 0.4rem auto 0;
+      width: 9.3333rem;
+      border-radius: 0.1333rem;
+    }
+    .group-title{
+      padding: 0.2666rem;
+      font-size: 0.4rem;
+      font-weight: bold;
+      color: #000;
+    }
+    .group-title::before{
+      margin-right: 0.1333rem;
+      content: "";
+      height: 100%;
+      border-right:0.1333rem solid #d1b48c;
+    }
+    /*重置picker样式*/
+    .picker-slot.picker-slot-center:nth-child(1){
+      display: none;
+    }
+    .picker-slot.picker-slot-center:nth-child(3){
+      display: none;
+    }
   }
 </style>

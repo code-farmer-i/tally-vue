@@ -37,47 +37,48 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .Sort{
     z-index:3;
+    .sort-group{
+      position: relative;
+      padding: 0.2666rem 0.4rem;
+      border-bottom: 1px solid #eee;
+    }
+    .sort-group.active .xz{
+      display: block;
+    }
+    .sort-group .sort-name{
+      margin-left: 0.2666rem;
+      font-size: 0.4533rem;
+      vertical-align: middle;
+    }
+    .sort-group .img-wrap{
+      display: inline-block;
+      position: relative;
+      width: 0.9333rem;
+      height: 0.9333rem;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+    .sort-group .img-wrap img{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      margin-left: -0.2666rem;
+      margin-top: -0.2666rem;
+      width: 0.5333rem;
+      height: 0.5333rem;
+    }
+    .xz{
+      display: none;
+      position: absolute;
+      top:50%;
+      right: 0.4rem;
+      margin-top: -0.2666rem;
+      width: 0.5333rem;
+      height: 0.5333rem;
+    }
   }
-  .sort-group{
-    position: relative;
-    padding: 0.2666rem 0.4rem;
-    border-bottom: 1px solid #eee;
-  }
-  .sort-group.active .xz{
-    display: block;
-  }
-  .sort-group .sort-name{
-    margin-left: 0.2666rem;
-    font-size: 0.4533rem;
-    vertical-align: middle;
-  }
-  .sort-group .img-wrap{
-    display: inline-block;
-    position: relative;
-    width: 0.9333rem;
-    height: 0.9333rem;
-    border-radius: 50%;
-    vertical-align: middle;
-  }
-  .sort-group .img-wrap img{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    margin-left: -0.2666rem;
-    margin-top: -0.2666rem;
-    width: 0.5333rem;
-    height: 0.5333rem;
-  }
-  .xz{
-    display: none;
-    position: absolute;
-    top:50%;
-    right: 0.4rem;
-    margin-top: -0.2666rem;
-    width: 0.5333rem;
-    height: 0.5333rem;
-  }
+
 </style>

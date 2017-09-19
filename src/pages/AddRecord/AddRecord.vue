@@ -167,64 +167,64 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .AddRecord{
     z-index:2;
-  }
-  .add-group{
-    padding: 0.4rem;
-    font-size: 0;
-    border-bottom: 1px solid #eee;
-  }
-  .add-group .name{
-    display: inline-block;
-    width: 20%;
-    vertical-align: middle;
-    font-size: 0.4533rem;
-    line-height: 1;
-  }
-  .add-group .right{
-    display: inline-block;
-    width: 80%;
-    vertical-align: middle;
-    text-align: right;
-  }
-  .add-group .right span{
-    vertical-align: middle;
-    font-size: 0.4533rem;
-    color: #8a8a8a;
-  }
-  .add-group .inp-num{
-    width: 100%;
-    color: #14ba89;
-    font-size: 0.9333rem;
-    height: 0.9333rem;
-    text-align: right;
-    border: 0;
-  }
-  .add-group .inp-num::-webkit-input-placeholder{
-    color: #14ba89;
-  }
-  .add-group .noteInp{
-    text-align: right;
-    border: 0;
-  }
-  .add-group .picker{
-    font-size: 0.4533rem;
-    color: #8a8a8a;
-  }
-  .add-group.select:active{
-    background-color: #f1f1f1;
-  }
-  .add-group .noteInp{
-    width: 100%;
-    font-size: 0.4533rem;
-  }
-  .note-placeholder::-webkit-input-placeholder{
-    color: #8a8a8a;
-  }
-  /*重置picker样式*/
-  .AddRecord .mint-datetime:nth-child(1) .picker-slot.picker-slot-center:nth-child(1){
-    display: none;
+    .add-group{
+      padding: 0.4rem;
+      font-size: 0;
+      border-bottom: 1px solid #eee;
+    }
+    .add-group .name{
+      display: inline-block;
+      width: 20%;
+      vertical-align: middle;
+      font-size: 0.4533rem;
+      line-height: 1;
+    }
+    .add-group .right{
+      display: inline-block;
+      width: 80%;
+      vertical-align: middle;
+      text-align: right;
+    }
+    .add-group .right span{
+      vertical-align: middle;
+      font-size: 0.4533rem;
+      color: #8a8a8a;
+    }
+    .add-group .inp-num{
+      width: 100%;
+      color: #14ba89;
+      font-size: 0.9333rem;
+      height: 0.9333rem;
+      text-align: right;
+      border: 0;
+    }
+    .add-group .inp-num::-webkit-input-placeholder{
+      color: #14ba89;
+    }
+    .add-group .noteInp{
+      text-align: right;
+      border: 0;
+    }
+    .add-group .picker{
+      font-size: 0.4533rem;
+      color: #8a8a8a;
+    }
+    .add-group.select:active{
+      background-color: #f1f1f1;
+    }
+    .add-group .noteInp{
+      width: 100%;
+      font-size: 0.4533rem;
+    }
+    .note-placeholder::-webkit-input-placeholder{
+      color: #8a8a8a;
+    }
+    /*重置picker样式*/
+    .mint-datetime:nth-child(1) .picker-slot.picker-slot-center:nth-child(1){
+      display: none;
+    }
   }
 </style>

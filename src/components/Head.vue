@@ -14,7 +14,9 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+  @import '../assets/scss/colors.scss';
+
   .header{
     position: fixed;
     top:0;
@@ -23,7 +25,7 @@
     max-width: 10rem;
     height: 1.2rem;
     line-height: 1.2rem;
-    background-color: #d1b38b;
+    background-color: $Theme-color;
     color: #fff;
     font-size: .48rem;
   }

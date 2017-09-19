@@ -25,7 +25,8 @@
   }
 </script>
 
-<style>
+<style lang="scss">
+
   .tarbar{
     display: table;
     position: fixed;

@@ -189,99 +189,87 @@
   }
 </script>
 
-<style>
-  .item{
-    position: relative;
-    text-align: right;
-    padding: 0.32rem 0.3333rem;
-    border-top:1px solid #eee;
-    transition:.5s transform;
-    font-size: 0;
-  }
-  .item-wrap:last-child .item{
-    border-bottom:1px solid #eee;
-  }
-  .item-wrap.have-note .item{
-    padding-top: 0.2133rem;
-    padding-bottom:0.2133rem;
-  }
-  .note{
-    padding:0 0.3333rem 0 1.2rem;
-    background-color: #fff;
-    font-size: 0.4rem;
-    color: #c5c4c5;
-    text-align: left;
-  }
-  .item.active{
-    transform: translateX(1.8666rem)
-  }
-  .del{
-    padding-top: 0.5333rem;
-    position: absolute;
-    top:0;
-    left: 100%;
-    width: 1.8666rem;
-    height: 100%;
-    text-align: center;
-    color: #fff;
-    background-color: #eb4d3d;
-    font-size: 0.4533rem;
-  }
-  .item-wrap.have-note .del{
-    padding-top: 0.72rem;
-  }
-  .groupName{
-    padding: 0.2666rem 0.4rem;
-    background-color: #fcfcfc;
-    font-family: "ktsz";
-    font-size: 0.4rem;
-  }
-  .picker-wrap{
-    padding-right: 0.6666rem;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-  }
-  .picker-val{
-    font-family: "ktsz";
-    font-size: 1.0666rem;
-    color: #fff;
-  }
-  .xiala{
-    position: absolute;
-    top:50%;
-    right: 0;
-    margin-top: -0.2666rem;
-    width: 0.5333rem;
-    height: 0.5333rem;
-    vertical-align: middle;
-  }
-  .more-data{
-    position: relative;
-    padding: 0.2666rem 0;
-    text-align: center;
-    color: #c0c0c1;
-    background-color: #fff;
-    font-size: 0.37333rem;
-  }
-  .more-data::after, .more-data::before{
-    content: "";
-    position: absolute;
-    top:50%;
-    width: 2.4rem;
-    border-top: 1px solid #e2e2e4;
-  }
-  .more-data::after{
-    left: 1.0666rem;
-  }
-  .more-data::before{
-    right: 1.0666rem;
-  }
-  /*重置picker样式*/
-  .Month .picker-slot.picker-slot-center:nth-child(1){
-    display: none;
-  }
-  .Month .picker-slot.picker-slot-center:nth-child(3){
-    display: none;
+<style lang="scss">
+  .Month {
+
+    .item {
+      position: relative;
+      text-align: right;
+      padding: 0.32rem 0.3333rem;
+      border-top: 1px solid #eee;
+      transition: .5s transform;
+      font-size: 0;
+    }
+
+    .item-wrap:last-child .item {
+      border-bottom: 1px solid #eee;
+    }
+
+    .item-wrap.have-note .item {
+      padding-top: 0.2133rem;
+      padding-bottom: 0.2133rem;
+    }
+
+    .item.active {
+      transform: translateX(1.8666rem)
+    }
+
+    .item-wrap.have-note .del {
+      padding-top: 0.72rem;
+    }
+
+    .groupName {
+      padding: 0.2666rem 0.4rem;
+      background-color: #fcfcfc;
+      font-family: "ktsz";
+      font-size: 0.4rem;
+    }
+
+    .picker-wrap {
+      padding-right: 0.6666rem;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+    }
+
+    .picker-val {
+      font-family: "ktsz";
+      font-size: 1.0666rem;
+      color: #fff;
+    }
+
+    .more-data {
+      position: relative;
+      padding: 0.2666rem 0;
+      text-align: center;
+      color: #c0c0c1;
+      background-color: #fff;
+      font-size: 0.37333rem;
+    }
+
+    .more-data::after, .more-data::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 2.4rem;
+      border-top: 1px solid #e2e2e4;
+    }
+
+    .more-data::after {
+      left: 1.0666rem;
+    }
+
+    .more-data::before {
+      right: 1.0666rem;
+    }
+
+    /*重置picker样式*/
+    .picker-slot.picker-slot-center:nth-child(1) {
+      display: none;
+    }
+
+    .picker-slot.picker-slot-center:nth-child(3) {
+      display: none;
+    }
   }
 </style>

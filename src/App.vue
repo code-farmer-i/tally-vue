@@ -30,7 +30,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import './assets/scss/colors.scss';
+
   html,body{
     overflow-y: auto;
   }
@@ -45,26 +47,26 @@ export default {
     width: 100%;
     background-color: #fff;
   }
-#app {
-  position: relative;
-  margin: 0 auto;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333;
-  max-width: 10rem;
-  height: 100%;;
-  background-color: #fff;
-  overflow-x: hidden;
-  -webkit-user-select: none;
-}
+  #app {
+    position: relative;
+    margin: 0 auto;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333;
+    max-width: 10rem;
+    height: 100%;;
+    background-color: #fff;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+  }
   .btn{
     margin: 0.5333rem auto 0.5333rem;
     width: 9.3333rem;
     height: 1.3333rem;
     line-height: 1.3333rem;
     text-align: center;
-    background-color: #d1b48c;
+    background-color: $Theme-color;
     color: #fff;
     font-size: 0.5333rem;
     box-shadow: 0 0.2666rem 0.6666rem -0.1333rem rgba(209, 180, 140, .8);
