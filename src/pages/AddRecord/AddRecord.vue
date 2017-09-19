@@ -4,7 +4,7 @@
     <div class="add-group">
       <div class="name">金额</div>
       <div class="right">
-        <input  type="number" class="inp-num" v-model.number="monetary" placeholder="0.00"/>
+        <input  type="number" class="inp-num" placeholder="0.00" @input="filterInp" ref="numInp"/>
       </div>
     </div>
     <div class="add-group select" style="padding-right:0.2666rem" @click="goSort()">
@@ -70,8 +70,8 @@
     data(){
       return {
         headTitle: '记一笔',
-        monetary: '',
         sortId: -1,
+        monetary: '',
         dateStr: '',
         timeStr: '',
         note: '',
@@ -91,6 +91,17 @@
       ...mapState(['initAddRecord'])
     },
     methods:{
+      filterInp(e){
+        let inp = e.target;
+        let newVal = inp.value;
+
+        if((typeof +newVal == 'number' && !isNaN(+newVal)) || (newVal == '.' && this.monetary != '')){
+          inp.value = newVal
+          this.monetary = newVal
+        }else{
+          inp.value = this.monetary
+        }
+      },
       openDatePicker() {
         this.$refs.picker.open();
       },
@@ -108,7 +119,7 @@
         this.$router.push({name: 'Sort', params: {'sortId': this.sortId}})
       },
       async commitRecord(){
-        if(typeof this.monetary != 'number'){
+        if(typeof +this.monetary != 'number'){
           alert('请输入金额')
           return
         }else if(this.sortId == -1){
@@ -124,7 +135,7 @@
           payTime: [this.dateStr, this.timeStr].join(' '),
           note: this.note,
           payType: this.sortId,
-          monetary: this.monetary
+          monetary: +this.monetary
         })
 
         this.needUpData();
@@ -142,6 +153,7 @@
         this.timeStr = time;
 
         this.monetary = ''
+        this.$refs.numInp.value = ''
         this.sortId = -1
         this.note = ''
 
