@@ -38,8 +38,13 @@
       return {
         total: '0.00',
         list: [],
-        imgArr: imgArr
+        imgArr: imgArr,
       }
+    },
+    created(){
+      this.refreshList();
+
+      this.upDataComplete('dayRecord')
     },
     methods:{
       async refreshList(){
@@ -66,6 +71,7 @@
     },
     activated(){
       if(this.dayRecord){
+        console.log(3)
         this.refreshList()
       }
 

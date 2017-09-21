@@ -71,6 +71,11 @@
       }
     },
     mixins:[windowScroll],
+    created(){
+      this.refreshList(new Date());
+
+      this.upDataComplete('monthRecord')
+    },
     methods:{
       openPicker() {
         this.$refs.picker.open();

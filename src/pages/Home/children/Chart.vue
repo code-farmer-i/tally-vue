@@ -77,6 +77,11 @@
         pickerVisible: new Date()
       }
     },
+    created(){
+      this.refreshList(new Date());
+
+      this.upDataComplete('chart')
+    },
     methods:{
       openPicker() {
         this.$refs.picker.open();

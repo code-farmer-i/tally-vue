@@ -7,8 +7,8 @@ function apiFactory(){
 
   for(let [apiName, apiUrl] of Object.entries(API)){
 
-    apiActions[apiName] = async ({dispatch}, params) => {
-      return await getData(dispatch, params, apiUrl);
+    apiActions[apiName] = ({dispatch}, params) => {
+      return getData(dispatch, params, apiUrl);
     }
 
   }
@@ -16,10 +16,10 @@ function apiFactory(){
   return apiActions;
 }
 
-async function getData(dispatch, params, apiUrl){
+function getData(dispatch, params, apiUrl){
   dispatch('showLoading')
 
-  return await new Promise((resolve, reject)=>{
+  return new Promise((resolve, reject)=>{
     Promise.race([Request(dispatch, params, apiUrl), Timeout()])
       .then((data)=>{
         dispatch('hideLoading')
