@@ -1,9 +1,9 @@
 const HOST = '/';
 const TEST_HOST = 'http://192.168.1.104:8080/';
 
-const API_HOST = TEST_HOST;
+const API_HOST = process.env.NODE_ENV === 'production' ? HOST : TEST_HOST;
 
-function setApi(url){
+const setApi = (url) => {
   return API_HOST + url;
 }
 

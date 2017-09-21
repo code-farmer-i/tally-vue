@@ -3,16 +3,11 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
 
-import MintUI from 'mint-ui'
-import 'mint-ui/lib/style.css'
-
 import router from './router'
 import store from './store'
 
 import App from './App'
 import toast from './components/common/Toast'
-
-Vue.use(MintUI)
 
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function() {

@@ -38,7 +38,7 @@
       return {
         total: '0.00',
         list: [],
-        imgArr: imgArr,
+        imgArr: Object.freeze(imgArr),
       }
     },
     created(){

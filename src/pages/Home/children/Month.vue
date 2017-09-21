@@ -61,7 +61,7 @@
       return {
         dateStr: '月消费',
         total: '0.00',
-        imgArr: imgArr,
+        imgArr: Object.freeze(imgArr),
         list:{},
         recordNum: 0,
         showMore: false,

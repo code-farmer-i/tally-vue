@@ -73,7 +73,7 @@
         pieList:[],
         details:[],
         monthTotal: 0,
-        imgArr: imgArr,
+        imgArr: Object.freeze(imgArr),
         pickerVisible: new Date()
       }
     },

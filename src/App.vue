@@ -140,12 +140,12 @@ export default {
     transform: translateX(10rem);
   }
   /*重置picker样式*/
-  .mint-datetime-cancel{
+  #app .mint-datetime-cancel{
     padding-left: 20px;
     text-align: left;
     color: #8a8a8a;
   }
-  .mint-datetime-confirm{
+  #app .mint-datetime-confirm{
     padding-right: 20px;
     text-align: right;
     color: limegreen;
