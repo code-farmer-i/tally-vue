@@ -111,8 +111,8 @@
 
         if(result.content.length > 0){
           that.renderChart(result.content, result.total);
-          that.details = result.content,
-            that.monthTotal = parseFloat(result.total).toFixed(2)
+          that.details = Object.freeze(result.content);
+          that.monthTotal = parseFloat(result.total).toFixed(2)
         }else{
           that.renderChart([{sortName: '本月暂无记录', payType:2, total: 1}], 1);
           that.details = []
@@ -137,7 +137,7 @@
           parentRotate = parentRotate + chartData[i].rotate;
         }
 
-        this.pieList = chartData;
+        this.pieList = Object.freeze(chartData);
       },
       ...mapMutations(['upDataComplete', 'needUpData']),
       ...mapActions(['getStatistics'])

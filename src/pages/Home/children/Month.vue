@@ -17,7 +17,7 @@
           <div class="item" :class="{active: groupItem.active}">
             <div class="inline-block-left50">
               <div class="img-wrap" :class="[`sort${groupItem.sortId}`]">
-                <img :src="imgArr[`sort${groupItem.sortId}`]"/>
+                <img :src="imgObj[`sort${groupItem.sortId}`]"/>
               </div>
               <div class="pay-type">{{groupItem.payTime}} {{groupItem.sortName}}</div>
             </div>
@@ -48,7 +48,7 @@
 <script type="text/ecmascript-6">
   import {formatTime} from '../../../util/util'
   import {mapActions, mapState, mapMutations} from 'vuex'
-  import imgArr from '../../../assets/js/img'
+  import imgObj from '../../../assets/js/img'
   import loadMore from '../../../components/common/loadMore'
   import {windowScroll} from '../../../mixin/mixin'
   import API from '../../../util/api/api'
@@ -61,7 +61,7 @@
       return {
         dateStr: '月消费',
         total: '0.00',
-        imgArr: Object.freeze(imgArr),
+        imgObj: Object.freeze(imgObj),
         list:{},
         recordNum: 0,
         showMore: false,
@@ -75,6 +75,11 @@
       this.refreshList(new Date());
 
       this.upDataComplete('monthRecord')
+    },
+    mounted(){
+      this.$nextTick(()=>{
+        imgObj['sort5'] = 1;
+      })
     },
     methods:{
       openPicker() {
@@ -133,7 +138,7 @@
           newList[payDate].push(data.content[i]);
         }
 
-        this.list = newList;
+        this.list = Object.freeze(newList);
         this.recordNum = recordNum;
         this.hasNextPage = data.hasNextPage;
         this.total = parseFloat(data.total).toFixed(2);

@@ -55,7 +55,7 @@
           date: date
         })
 
-        this.list = result.content;
+        this.list = Object.freeze(result.content);
         this.total = parseFloat(result.total).toFixed(2);
 
         this.upDataComplete('dayRecord')
